@@ -1,13 +1,18 @@
 from selenium.webdriver.common.by import By
 
 
-class Locators:
+class LocatorsMainPage:
     LOCATOR_CURRENCY = (By.XPATH, "//span[@class='expand-more _gray-darker hidden-sm-down']")
     LOCATOR_CURRENCY_SELECTION = (By.XPATH, "//div[@class='currency-selector dropdown js-dropdown']/a")
     LOCATOR_CURRENCY_DOLLAR = (By.XPATH, "//div[@class='currency-selector dropdown js-dropdown open']/ul/li[3]/a")
     LOCATOR_FOUND = (By.NAME, 's')
+    LOCATOR_PRICE = (By.CLASS_NAME, 'price')
     LOCATOR_NUMBER_PRODUCTS_TEXT = (By.XPATH, "//div[@class='col-md-6 hidden-sm-down total-products']/p")
     LOCATOR_NUMBER_PRODUCTS = (By.CLASS_NAME, 'product-description')
+
+
+class LocatorsSearchPage:
+    LOCATOR_CURRENCY = (By.XPATH, "//span[@class='expand-more _gray-darker hidden-sm-down']")
     LOCATOR_PRICE = (By.CLASS_NAME, 'price')
     LOCATOR_SELECT_TITLE = (By.CLASS_NAME, 'select-title')
     LOCATOR_SORTING_FROM_HIGH = (

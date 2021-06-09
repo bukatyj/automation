@@ -7,6 +7,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 def pytest_addoption(parser):
     parser.addoption('--browser', action='store', default='Chrome')
 
+
 def change_browser(request):
     browser_name = request.config.getoption('--browser', default='Chrome')
     if browser_name == 'Firefox':
@@ -15,9 +16,9 @@ def change_browser(request):
         browser = webdriver.Chrome(ChromeDriverManager().install())
     return browser
 
+
 @pytest.fixture(scope='session')
 def browser(request):
     browser = change_browser(request)
     yield browser
     browser.quit()
-
